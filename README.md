@@ -1,4 +1,4 @@
-# Eat Well 
+# Eat Well
 
 A dietary restaurant finder for the Pimoroni Tufty 2350 (Badger/Badgeware).
 Pick a city, filter by diet, browse the results, and open a detail view with
