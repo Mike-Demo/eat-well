@@ -12,8 +12,12 @@ Controls: UP/DOWN move, A selects, B or C goes back.
 from badgeware import *
 import json
 
-from icons import DIETS, draw_diet_icon, diet_by_key
+from icons import DIETS, diet_by_key
 from qr_data import QR
+from sprites import draw_icon, draw_splash
+
+SPLASH_MS = 2600       # splash shows ~2.6s, any button skips
+SPLASH_FRAME_MS = 450  # animation speed
 
 badge.mode(HIRES | VSYNC)
 display.backlight(0.85)
@@ -38,15 +42,41 @@ with open("data/restaurants.json") as data_file:
 CITIES = APP["cities"]
 
 # --- state (kept outside update() so it survives between frames) ---
-screen_id = "city"   # city | diet | list | detail | notice
+screen_id = "splash"  # splash | city | diet | list | detail | notice | credits
+splash_start = badge.ticks
 city_idx = 0
-city_row = 0         # 0 = "Near me", 1..n = CITIES[city_row - 1]
+city_row = 0         # 0 = "Near me", 1..n = CITIES[city_row - 1], n+1 = Credits
 city_top = 0         # scroll offset for the city picker
 diet_idx = 0
 list_idx = 0
 list_top = 0
 results = []
 notice_lines = []
+credits_top = 0      # scroll offset for the credits screen
+
+
+CREDITS_LINES = [
+    "[EAT WELL]",
+    "MIT License (c) 2026",
+    "Mike Demopoulos",
+    "[Made with]",
+    "Pixel art: Adobe Firefly",
+    "Map links: MapQuest",
+    "QR codes: Segno",
+    "Location: ipwho.is",
+    "Badge: Tufty 2350 / Badgeware",
+    "[Find me]",
+    "github.com/Mike-Demo",
+    "x.com/Mike_Demo",
+    "instagram.com/mdemop",
+    "threads.com/@mdemop",
+    "mikedemo.bsky.social",
+    "facebook.com/mikedemo42",
+    "mike-demo.tumblr.com",
+    "linkedin.com/in/mikedemopoulos",
+    "mikedemo.com",
+]
+CREDITS_ROWS = 12
 
 
 def current_diet():
@@ -70,6 +100,12 @@ def wrap(text, width):
     lines = []
     line = ""
     for word in words:
+        while len(word) > width:  # hard-break words longer than the width
+            if line:
+                lines.append(line)
+                line = ""
+            lines.append(word[:width])
+            word = word[width:]
         piece = word if not line else line + " " + word
         if len(piece) <= width:
             line = piece
@@ -131,7 +167,7 @@ def locate_city():
 
 def show_notice(message):
     global screen_id, notice_lines
-    notice_lines = wrap(message, 38)
+    notice_lines = wrap(message, 37)
     screen_id = "notice"
 
 
@@ -165,17 +201,55 @@ def draw_city():
             screen.pen = ACCENT
             screen.text(">", 12, y)
         city = CITIES[i]
+        draw_icon("city-" + city["id"], 26, y - 4)
         screen.pen = WHITE if row == city_row else DIM
-        screen.text(city["name"], 40, y)
+        screen.text(city["name"], 56, y)
         screen.pen = DIM
-        screen.text(str(len(city["restaurants"])) + " spots", 210, y)
+        screen.text(str(len(city["restaurants"])) + " spots", 218, y)
         y += CITY_ROW_H
-    rows = len(CITIES) + 1
+    credits_row = len(CITIES) + 1
+    if city_top <= credits_row < city_top + CITY_ROWS:
+        if credits_row == city_row:
+            screen.pen = SELECT
+            screen.rectangle(6, y - 4, W - 12, 24)
+            screen.pen = ACCENT
+            screen.text(">", 12, y)
+        screen.pen = WHITE if credits_row == city_row else DIM
+        screen.text("Credits", 56, y)
+        screen.pen = DIM
+        screen.text("license & sources", 200, y)
+        y += CITY_ROW_H
+    rows = len(CITIES) + 2  # Near me + cities + Credits
     if rows > CITY_ROWS:
         screen.pen = DIM
         screen.text(str(city_top + 1) + "-" + str(min(city_top + CITY_ROWS, rows)) +
                     " of " + str(rows), 12, H - FOOTER_H - 14)
     footer("UP/DN move   A select")
+
+
+def draw_credits():
+    header("Credits")
+    y = LIST_Y
+    style = DIM
+    shown = 0
+    for line in CREDITS_LINES[credits_top:]:
+        if shown >= CREDITS_ROWS:
+            break
+        if line.startswith("["):
+            screen.pen = ACCENT
+            screen.text(line[1:-1], 12, y)
+            style = WHITE if "Find me" in line else DIM
+        else:
+            screen.pen = style
+            screen.text(line, 12, y)
+        y += 14
+        shown += 1
+    if len(CREDITS_LINES) > CREDITS_ROWS:
+        screen.pen = DIM
+        screen.text(str(credits_top + 1) + "-" +
+                    str(min(credits_top + CREDITS_ROWS, len(CREDITS_LINES))) +
+                    " of " + str(len(CREDITS_LINES)), 12, H - FOOTER_H - 14)
+    footer("UP/DN scroll   B back")
 
 
 def draw_notice():
@@ -195,9 +269,9 @@ def draw_diet():
         if i == diet_idx:
             screen.pen = SELECT
             screen.rectangle(6, y - 6, W - 12, 26)
-        draw_diet_icon(diet, 24, y + 4, 8)
+        draw_icon("diet-" + diet["key"], 16, y - 4)
         screen.pen = WHITE if i == diet_idx else DIM
-        screen.text(diet["label"], 44, y)
+        screen.text(diet["label"], 48, y)
         y += 30
     footer("UP/DN move   A select   B back")
 
@@ -224,10 +298,10 @@ def draw_list():
             screen.text(spot["cuisine"] + "  " + spot["price"], 12, y + 14)
             rating = spot["rating"]
             screen.text("RT " + (str(rating) if rating else "-"), 200, y + 14)
-            ix = 296
+            ix = 308
             for key in spot["diets"]:
-                draw_diet_icon(diet_by_key(key), ix, y + 8, 8)
-                ix -= 20
+                draw_icon("diet-" + key, ix - 12, y + 6, small=True)
+                ix -= 16
             y += ROW_H
         if len(results) > ROWS:
             screen.pen = DIM
@@ -238,10 +312,13 @@ def draw_list():
 
 def draw_detail():
     spot = results[list_idx]
+    qr_key = CITIES[city_idx]["id"] + "|" + spot["name"]
+    geom = qr_geom(qr_key)
+    qr_x = geom[0] if geom else W  # keep text clear of the QR's left edge
     header("Details")
     y = LIST_Y
     screen.pen = WHITE
-    for line in wrap(spot["name"], 40):
+    for line in wrap(spot["name"], 36):
         screen.text(line, 12, y)
         y += 14
     screen.pen = DIM
@@ -256,23 +333,31 @@ def draw_detail():
     y += 16
     for key in spot["diets"]:
         diet = diet_by_key(key)
-        draw_diet_icon(diet, 20, y + 4, 8)
+        draw_icon("diet-" + key, 14, y - 1, small=True)
         screen.pen = WHITE
-        screen.text(diet["label"], 36, y)
+        screen.text(diet["label"], 34, y)
         y += 20
     y += 4
+    # Note: wrap narrow enough to clear the QR, and stop above the disclaimer.
+    note_width = (qr_x - 12 - 8) // 8 if geom else 34
+    max_lines = max(0, (DISCLAIMER_Y - 6 - y) // 13)
+    note_lines = wrap(spot["note"], note_width)
+    shown = note_lines[:max_lines]
+    if len(note_lines) > max_lines and shown:
+        shown[-1] = shown[-1][:max(0, note_width - 3)] + "..."
     screen.pen = DIM
-    for line in wrap(spot["note"], 34):
+    for line in shown:
         screen.text(line, 12, y)
         y += 13
-    draw_qr(CITIES[city_idx]["id"] + "|" + spot["name"])
+    draw_qr(qr_key)
     screen.pen = color.rgb(190, 150, 60)
-    screen.text("Menus change. Verify dietary needs directly.", 12, H - FOOTER_H - 14)
+    screen.text("Menus change, verify directly", 12, DISCLAIMER_Y)
     footer("B back   Scan QR for map")
 
 
 QR_SCALE = 2
 QR_QUIET = 2  # quiet-zone modules on each side
+DISCLAIMER_Y = H - FOOTER_H - 14  # gold reminder line above the footer
 _qr_cache = {}
 
 
@@ -289,14 +374,22 @@ def qr_matrix(key):
     return hit
 
 
+def qr_geom(key):
+    """Return (x0, y0, total) for a QR code, or None when the key has none."""
+    if key not in QR:
+        return None
+    size, _raw = qr_matrix(key)
+    total = (size + QR_QUIET * 2) * QR_SCALE
+    return (W - total - 8, H - FOOTER_H - total - 6, total)
+
+
 def draw_qr(key):
     """Draw the MapQuest QR code for a restaurant, bottom-right above footer."""
-    if key not in QR:
+    geom = qr_geom(key)
+    if geom is None:
         return
+    x0, y0, total = geom
     size, raw = qr_matrix(key)
-    total = (size + QR_QUIET * 2) * QR_SCALE
-    x0 = W - total - 8
-    y0 = H - FOOTER_H - total - 6
     screen.pen = WHITE
     screen.rectangle(x0, y0, total, total)
     screen.pen = color.black
@@ -310,20 +403,35 @@ def draw_qr(key):
             bit += 1
 
 
+def draw_splash_screen():
+    frame = (badge.ticks // SPLASH_FRAME_MS) % 4
+    draw_splash(frame)
+
+
+def _splash_elapsed():
+    dt = badge.ticks - splash_start
+    return dt if dt >= 0 else SPLASH_MS + 1  # tick counter wrapped: just advance
+
+
 def update():
     global screen_id, city_idx, city_row, city_top, diet_idx, list_idx, list_top
+    global credits_top
 
-    if screen_id == "city":
-        rows = len(CITIES) + 1
+    if screen_id == "splash":
+        if badge.pressed() or _splash_elapsed() > SPLASH_MS:
+            screen_id = "city"
+    elif screen_id == "city":
+        rows = len(CITIES) + 2
         if badge.pressed(BUTTON_UP):
             city_row = (city_row - 1) % rows
-            if city_row < city_top:
-                city_top = city_row
         elif badge.pressed(BUTTON_DOWN):
             city_row = (city_row + 1) % rows
-            if city_row >= city_top + CITY_ROWS:
-                city_top = city_row - CITY_ROWS + 1
-        elif badge.pressed(BUTTON_A):
+        # keep the selected row visible after either direction, incl. wrap
+        if city_row < city_top:
+            city_top = city_row
+        elif city_row >= city_top + CITY_ROWS:
+            city_top = city_row - CITY_ROWS + 1
+        if badge.pressed(BUTTON_A):
             if city_row == 0:
                 ok, value = locate_city()
                 if ok:
@@ -332,6 +440,9 @@ def update():
                     screen_id = "diet"
                 else:
                     show_notice(value)
+            elif city_row == len(CITIES) + 1:
+                credits_top = 0
+                screen_id = "credits"
             else:
                 city_idx = city_row - 1
                 diet_idx = 0
@@ -366,10 +477,20 @@ def update():
     elif screen_id == "notice":
         if badge.pressed(BUTTON_A) or badge.pressed(BUTTON_B) or badge.pressed(BUTTON_C):
             screen_id = "city"
+    elif screen_id == "credits":
+        max_top = max(0, len(CREDITS_LINES) - CREDITS_ROWS)
+        if badge.pressed(BUTTON_UP):
+            credits_top = max(0, credits_top - 1)
+        elif badge.pressed(BUTTON_DOWN):
+            credits_top = min(max_top, credits_top + 1)
+        if badge.pressed(BUTTON_B) or badge.pressed(BUTTON_C):
+            screen_id = "city"
 
     screen.pen = BG
     screen.clear()
-    if screen_id == "city":
+    if screen_id == "splash":
+        draw_splash_screen()
+    elif screen_id == "city":
         draw_city()
     elif screen_id == "diet":
         draw_diet()
@@ -379,6 +500,8 @@ def update():
         draw_detail()
     elif screen_id == "notice":
         draw_notice()
+    elif screen_id == "credits":
+        draw_credits()
 
 
 print("Eat Well: UP/DN move, A select, B back.")
