@@ -51,8 +51,16 @@ def quantize_icon(im, size):
     # quantize opaque colors to ICON_COLORS
     tmp = Image.new("RGB", (len(opaque), 1))
     tmp.putdata(opaque)
-    q = tmp.quantize(colors=ICON_COLORS, method=Image.MEDIANCUT).convert("RGB")
-    pal = [q.getpixel((i, 0)) for i in range(ICON_COLORS)]
+    qp = tmp.quantize(colors=ICON_COLORS, method=Image.MEDIANCUT)
+    # extract palette BEFORE converting (getpixel after convert reads pixels, not palette)
+    pal_data = qp.getpalette() or []
+    pal = []
+    for i in range(0, ICON_COLORS*3, 3):
+        if i+2 < len(pal_data):
+            pal.append((pal_data[i], pal_data[i+1], pal_data[i+2]))
+        else:
+            pal.append((0, 0, 0))  # pad if palette is short
+    q = qp.convert("RGB")
     # map each opaque pixel to nearest palette color
     qpx = q.load()
     idx = 0
