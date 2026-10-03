@@ -2,7 +2,8 @@
 
 A dietary restaurant finder for the Pimoroni Tufty 2350 (Badger/Badgeware).
 Pick a city, filter by diet, browse the results, and open a detail view with
-cuisine, price, rating, neighborhood, and notes.
+cuisine, price, rating, neighborhood, and notes. Each detail screen also shows
+a QR code that opens the restaurant in MapQuest when scanned.
 
 ## Cities
 
