@@ -1,0 +1,1155 @@
+{
+  "cities": [
+    {
+      "id": "san-francisco",
+      "name": "San Francisco, CA",
+      "aliases": [
+        "san francisco",
+        "sf",
+        "mission district",
+        "the mission",
+        "soma",
+        "south of market",
+        "tenderloin",
+        "noe valley",
+        "marina district",
+        "chinatown"
+      ],
+      "restaurants": [
+        {
+          "name": "Shizen",
+          "cuisine": "Sushi",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Mission",
+          "note": "Fully vegan sushi bar and izakaya.",
+          "rating": 4.9
+        },
+        {
+          "name": "Cha-Ya",
+          "cuisine": "Japanese",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Mission",
+          "note": "All-vegan Japanese; signature Cha-Ya roll.",
+          "rating": 4.6
+        },
+        {
+          "name": "Golden Era",
+          "cuisine": "Vietnamese",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Tenderloin",
+          "note": "Vegan Vietnamese kitchen, 15+ years downtown.",
+          "rating": 4.7
+        },
+        {
+          "name": "Greens",
+          "cuisine": "Californian",
+          "price": "$$$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Fort Mason",
+          "note": "Landmark vegetarian restaurant since 1979.",
+          "rating": 4.5
+        },
+        {
+          "name": "Kitava",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Mission",
+          "note": "Entirely gluten-free menu.",
+          "rating": 4.8
+        },
+        {
+          "name": "Firefly",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Noe Valley",
+          "note": "Gluten-free focus; known for GF fried chicken.",
+          "rating": 4.5
+        },
+        {
+          "name": "Sabra Grill",
+          "cuisine": "Israeli",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Chinatown",
+          "note": "Glatt kosher, Vaad HaKashrus certified since 1996.",
+          "rating": 4.2
+        },
+        {
+          "name": "Halal Wings Plus",
+          "cuisine": "American",
+          "price": "$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Tenderloin",
+          "note": "100% halal meat; wings and burgers.",
+          "rating": 4.7
+        },
+        {
+          "name": "Habibi's Birria",
+          "cuisine": "Mexican",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Mid-Market",
+          "note": "Halal birria tacos and gyro wraps.",
+          "rating": null
+        },
+        {
+          "name": "Moonbowls",
+          "cuisine": "Korean",
+          "price": "$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "SoMa",
+          "note": "Gluten-free Korean-inspired bowls.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "twin-cities",
+      "name": "Twin Cities, MN",
+      "restaurants": [
+        {
+          "area": "Powderhorn, Minneapolis",
+          "cuisine": "Cafe",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "Reverie Cafe + Bar",
+          "note": "Fully plant-based menu. Brunch, tacos, burgers and a natural-leaning bar.",
+          "price": "$$",
+          "rating": 4.6
+        },
+        {
+          "area": "East Lake St, Minneapolis",
+          "cuisine": "Soul food",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "Trio Plant-Based",
+          "note": "100% plant-based soul food. Mac and cheeze, jackfruit ribs, collards.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "St Paul",
+          "cuisine": "American",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "J. Selby's",
+          "note": "Long-running vegan staple. Burgers, shakes and comfort classics.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "West Bank, Minneapolis",
+          "cuisine": "Diner",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "name": "Hard Times Cafe",
+          "note": "Worker-owned since 1992. Vegetarian and vegan comfort food, late hours.",
+          "price": "$",
+          "rating": null
+        },
+        {
+          "area": "Minneapolis",
+          "cuisine": "Bakery",
+          "diets": [
+            "gluten-free"
+          ],
+          "name": "Sift Gluten Free",
+          "note": "Dedicated gluten-free bakery. Cakes, breads and pastries.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "Grand Ave, St Paul",
+          "cuisine": "Rotisserie",
+          "diets": [
+            "gluten-free"
+          ],
+          "name": "Brasa",
+          "note": "Rotisserie meats with a dedicated gluten-free menu.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "St Louis Park",
+          "cuisine": "Deli",
+          "diets": [
+            "kosher"
+          ],
+          "name": "The Kosher Spot",
+          "note": "Kosher grocery with a prepared-foods counter.",
+          "price": "$$",
+          "rating": 4.9
+        },
+        {
+          "area": "East Lake St, Minneapolis",
+          "cuisine": "Somali",
+          "diets": [
+            "halal"
+          ],
+          "name": "Masha Allah",
+          "note": "Halal Somali kitchen. Suqaar, sambusas and Somali tea.",
+          "price": "$",
+          "rating": null
+        },
+        {
+          "area": "Bloomington",
+          "cuisine": "Afghan",
+          "diets": [
+            "halal"
+          ],
+          "name": "Afghan Darbar",
+          "note": "Halal Afghan restaurant. Kabuli pulao, kabobs and baklava.",
+          "price": "$$",
+          "rating": null
+        }
+      ],
+      "aliases": [
+        "minneapolis",
+        "saint paul",
+        "st paul",
+        "st. paul",
+        "bloomington",
+        "edina",
+        "st louis park",
+        "hudson",
+        "woodbury",
+        "maple grove",
+        "plymouth",
+        "minnetonka",
+        "richfield",
+        "roseville",
+        "eagan",
+        "burnsville"
+      ]
+    },
+    {
+      "id": "chicago",
+      "name": "Chicago, IL",
+      "restaurants": [
+        {
+          "area": "Norwood Park",
+          "cuisine": "Korean",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "Amitabul",
+          "note": "100% vegan Korean. Bibimbap, dumplings and noodle soups.",
+          "price": "$$",
+          "rating": 4.9
+        },
+        {
+          "area": "River North",
+          "cuisine": "Asian fusion",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "PLANTA Queen",
+          "note": "Upscale vegan Asian. Sushi, bao and truffle udon.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "Chinatown",
+          "cuisine": "Chinese",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "name": "Veggie House",
+          "note": "Vegan Chinese comfort food. Potstickers and General Tso tofu.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "Lincoln Park",
+          "cuisine": "Egyptian",
+          "diets": [
+            "halal"
+          ],
+          "name": "Cairo Kebab",
+          "note": "Halal Egyptian. Koshary, kofta and shawarma.",
+          "price": "$$",
+          "rating": 5.0
+        },
+        {
+          "area": "The Loop",
+          "cuisine": "Middle Eastern",
+          "diets": [
+            "halal"
+          ],
+          "name": "The Halal Guys",
+          "note": "Halal gyro platters with the famous white sauce. Late-night hours.",
+          "price": "$$",
+          "rating": null
+        },
+        {
+          "area": "West Rogers Park",
+          "cuisine": "Pizza",
+          "diets": [
+            "kosher",
+            "vegetarian"
+          ],
+          "name": "Tel-Aviv Kosher Pizza",
+          "note": "Kosher dairy pizza, salads and sandwiches.",
+          "price": "$$",
+          "rating": 4.9
+        },
+        {
+          "area": "Skokie",
+          "cuisine": "Steakhouse",
+          "diets": [
+            "kosher"
+          ],
+          "name": "Shallots Bistro",
+          "note": "Upscale kosher steakhouse with sushi.",
+          "price": "$$$",
+          "rating": 4.7
+        },
+        {
+          "name": "Wheat's End Cafe",
+          "cuisine": "Cafe",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Park West",
+          "note": "100% dedicated gluten-free cafe and bakery; takeout only.",
+          "rating": null
+        }
+      ],
+      "aliases": [
+        "chicago",
+        "skokie",
+        "evanston",
+        "lincolnwood",
+        "oak park",
+        "cicero"
+      ]
+    },
+    {
+      "id": "new-york",
+      "name": "New York, NY",
+      "aliases": [
+        "new york",
+        "new york city",
+        "nyc",
+        "manhattan",
+        "brooklyn",
+        "queens",
+        "bronx",
+        "staten island"
+      ],
+      "restaurants": [
+        {
+          "name": "Eleven Madison Park",
+          "cuisine": "Fine dining",
+          "price": "$$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Flatiron, Manhattan",
+          "note": "Went 100% plant-based in 2021; luxury vegan tasting menu.",
+          "rating": null
+        },
+        {
+          "name": "Nix",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Greenwich Village",
+          "note": "Michelin-starred vegetarian with wide vegan options.",
+          "rating": null
+        },
+        {
+          "name": "Nami Nori",
+          "cuisine": "Japanese",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "West Village",
+          "note": "Dedicated gluten-free temaki bar.",
+          "rating": null
+        },
+        {
+          "name": "B&H Dairy",
+          "cuisine": "Jewish deli",
+          "price": "$",
+          "diets": [
+            "kosher",
+            "vegetarian"
+          ],
+          "area": "East Village",
+          "note": "Historic kosher dairy lunch counter since 1938.",
+          "rating": null
+        },
+        {
+          "name": "The Halal Guys",
+          "cuisine": "Middle Eastern",
+          "price": "$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Midtown",
+          "note": "Iconic halal cart turned restaurant; famous white sauce.",
+          "rating": null
+        },
+        {
+          "name": "Anixi",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "kosher"
+          ],
+          "area": "Chelsea",
+          "note": "Fully vegan and kosher-certified Mediterranean brasserie.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "los-angeles",
+      "name": "Los Angeles, CA",
+      "aliases": [
+        "los angeles",
+        "la",
+        "hollywood",
+        "west hollywood",
+        "santa monica",
+        "venice",
+        "culver city",
+        "pasadena",
+        "burbank",
+        "long beach"
+      ],
+      "restaurants": [
+        {
+          "name": "Crossroads Kitchen",
+          "cuisine": "Mediterranean",
+          "price": "$$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Melrose",
+          "note": "Upscale vegan Mediterranean from Chef Tal Ronnen; artichoke oysters, truffle mac and cheese.",
+          "rating": null
+        },
+        {
+          "name": "Gracias Madre",
+          "cuisine": "Mexican",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "West Hollywood",
+          "note": "Organic plant-based Mexican; jackfruit carnitas tacos and coconut ceviche.",
+          "rating": null
+        },
+        {
+          "name": "The Butcher's Daughter",
+          "cuisine": "Cafe",
+          "price": "$$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Venice",
+          "note": "Vegetarian cafe with plenty of vegan options; brunch, bowls and juices.",
+          "rating": null
+        },
+        {
+          "name": "Modern Bread and Bagel",
+          "cuisine": "Bakery",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Silver Lake",
+          "note": "Dedicated gluten-free bakery; bagels and sourdough.",
+          "rating": null
+        },
+        {
+          "name": "Haifa Restaurant",
+          "cuisine": "Israeli",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Pico-Robertson",
+          "note": "Kosher Mediterranean staple since 1979; shawarma pita and falafel.",
+          "rating": null
+        },
+        {
+          "name": "Zankou Chicken",
+          "cuisine": "Middle Eastern",
+          "price": "$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Hollywood",
+          "note": "Beloved local chain; halal rotisserie chicken, shawarma and falafel.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "houston",
+      "name": "Houston, TX",
+      "aliases": [
+        "houston",
+        "h-town",
+        "htown",
+        "baytown",
+        "pasadena",
+        "sugar land",
+        "sugarland",
+        "katy",
+        "the woodlands",
+        "pearland"
+      ],
+      "restaurants": [
+        {
+          "name": "Korny Vibes",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Montrose",
+          "note": "All-vegan comfort food; birria tacos and shakes.",
+          "rating": null
+        },
+        {
+          "name": "green seed",
+          "cuisine": "Cafe",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Midtown",
+          "note": "Plant-based cafe; 4.6 from 634 reviews.",
+          "rating": null
+        },
+        {
+          "name": "Flower Child",
+          "cuisine": "Healthy",
+          "price": "$$",
+          "diets": [
+            "gluten-free",
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Uptown",
+          "note": "Gluten-free-labeled menu; bowls, wraps, salads.",
+          "rating": null
+        },
+        {
+          "name": "mantra",
+          "cuisine": "Fine dining",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian",
+            "gluten-free"
+          ],
+          "area": "Midtown",
+          "note": "Gluten, soy, refined-sugar free vegan kitchen.",
+          "rating": null
+        },
+        {
+          "name": "Prime Grill & Bar",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Beechnut",
+          "note": "Kosher Mediterranean grill; shawarma and kebabs.",
+          "rating": null
+        },
+        {
+          "name": "Abu Omar Halal",
+          "cuisine": "Middle Eastern",
+          "price": "$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Downtown",
+          "note": "Late-night halal street food; shawarma arabi.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix, AZ",
+      "aliases": [
+        "phoenix",
+        "scottsdale",
+        "tempe",
+        "mesa",
+        "chandler",
+        "glendale",
+        "paradise valley",
+        "fountain hills"
+      ],
+      "restaurants": [
+        {
+          "name": "Green New American Vegetarian",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Downtown Phoenix",
+          "note": "Award-winning vegan comfort food; Big Wac, thyme fries, vegan soft serve.",
+          "rating": 4.7
+        },
+        {
+          "name": "The Coronado",
+          "cuisine": "Southwestern",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Coronado, Phoenix",
+          "note": "Plant-based Southwest kitchen; fried guacamole, cauliflower tacos, full bar.",
+          "rating": 4.7
+        },
+        {
+          "name": "Goji Berry",
+          "cuisine": "Bakery",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "gluten-free"
+          ],
+          "area": "Grand Ave, Phoenix",
+          "note": "Vegan bakery with gluten-free options; mac and cheeze, acai bowls.",
+          "rating": null
+        },
+        {
+          "name": "Middle Eastern Bakery & Deli",
+          "cuisine": "Middle Eastern",
+          "price": "$$",
+          "diets": [
+            "vegetarian",
+            "gluten-free"
+          ],
+          "area": "Midtown Phoenix",
+          "note": "Family-run bakery and deli; tabouli, kebab plates, gluten-free pitas.",
+          "rating": 4.6
+        },
+        {
+          "name": "Kitchen 18",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Scottsdale",
+          "note": "Kosher comfort food; BBQ ribs platter, falafel, sushi.",
+          "rating": 4.6
+        },
+        {
+          "name": "Hilal Grill",
+          "cuisine": "Pakistani",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "East Phoenix",
+          "note": "Family-owned halal South Asian grill since 2010; goat curry, kebabs.",
+          "rating": 4.8
+        }
+      ]
+    },
+    {
+      "id": "philadelphia",
+      "name": "Philadelphia, PA",
+      "aliases": [
+        "philadelphia",
+        "philly",
+        "center city",
+        "south philly",
+        "west philly",
+        "fishtown",
+        "rittenhouse",
+        "northeast philly"
+      ],
+      "restaurants": [
+        {
+          "name": "Vedge",
+          "cuisine": "Fine dining",
+          "price": "$$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Center City",
+          "note": "Award-winning vegan fine dining; salt-roasted beets.",
+          "rating": null
+        },
+        {
+          "name": "Charlie was a sinner.",
+          "cuisine": "Small plates",
+          "price": "$$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Center City",
+          "note": "Vegetarian small plates and craft cocktails.",
+          "rating": null
+        },
+        {
+          "name": "P.S. & Co.",
+          "cuisine": "Organic cafe",
+          "price": "$$",
+          "diets": [
+            "gluten-free",
+            "vegan",
+            "kosher",
+            "vegetarian"
+          ],
+          "area": "Center City",
+          "note": "Entirely organic, gluten-free, vegan and kosher menu.",
+          "rating": null
+        },
+        {
+          "name": "Judah Mediterranean Grill",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Northeast Philadelphia",
+          "note": "Kosher Mediterranean grill; BYOB.",
+          "rating": null
+        },
+        {
+          "name": "Saad's Halal Restaurant",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "West Philadelphia",
+          "note": "Local favorite for halal Mediterranean dishes.",
+          "rating": null
+        },
+        {
+          "name": "Bar Bombon",
+          "cuisine": "Puerto Rican",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Rittenhouse",
+          "note": "Vegan Puerto Rican kitchen; cauliflower tacos.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "san-antonio",
+      "name": "San Antonio, TX",
+      "aliases": [
+        "san antonio",
+        "sanantonio",
+        "alamo city",
+        "alamocity",
+        "stone oak",
+        "universal city",
+        "schertz",
+        "new braunfels",
+        "boerne",
+        "converse"
+      ],
+      "restaurants": [
+        {
+          "name": "Viva Vegeria",
+          "cuisine": "Tex-Mex",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian",
+            "gluten-free"
+          ],
+          "area": "South Side",
+          "note": "Vegan Tex-Mex; also vegetarian and gluten-free.",
+          "rating": null
+        },
+        {
+          "name": "Green Vegetarian Cuisine",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Pearl",
+          "note": "All plant-based menu at the Pearl.",
+          "rating": null
+        },
+        {
+          "name": "H.A.S.H Vegan Eatery",
+          "cuisine": "Comfort food",
+          "price": "$$",
+          "diets": [
+            "vegan"
+          ],
+          "area": "South Side",
+          "note": "Vegan comfort food; pozole and waffles.",
+          "rating": null
+        },
+        {
+          "name": "Sweet Yams",
+          "cuisine": "Southern",
+          "price": "$",
+          "diets": [
+            "gluten-free",
+            "vegan"
+          ],
+          "area": "Eastside",
+          "note": "Organic gluten-free vegan Southern food.",
+          "rating": null
+        },
+        {
+          "name": "Yummy Kosher Grill",
+          "cuisine": "Grill",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Far North Side",
+          "note": "Kosher grill; 4.8 from 58 reviews.",
+          "rating": null
+        },
+        {
+          "name": "Afghan Village Restaurant",
+          "cuisine": "Afghan",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Northwest Side",
+          "note": "Halal Afghan; kabuli pulao and market.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "san-diego",
+      "name": "San Diego, CA",
+      "aliases": [
+        "san diego",
+        "la jolla",
+        "hillcrest",
+        "north park",
+        "south park",
+        "gaslamp",
+        "mission valley",
+        "ocean beach",
+        "encinitas",
+        "carlsbad"
+      ],
+      "restaurants": [
+        {
+          "name": "Kindred",
+          "cuisine": "American",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "South Park",
+          "note": "Gothic vegan bar and restaurant; shroom burger, buffalo cauliflower, craft cocktails.",
+          "rating": null
+        },
+        {
+          "name": "Donna Jean",
+          "cuisine": "Italian",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Hillcrest",
+          "note": "Award-winning vegan Italian; wood-fired pizzas and house-made pastas since 2017.",
+          "rating": null
+        },
+        {
+          "name": "One WorldBeat Cafe",
+          "cuisine": "Caribbean",
+          "price": "$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "Balboa Park",
+          "note": "Vegan and vegetarian Caribbean cafe; limited Fri-Sun hours.",
+          "rating": null
+        },
+        {
+          "name": "Starry Lane Bakery",
+          "cuisine": "Bakery",
+          "price": "$$",
+          "diets": [
+            "gluten-free",
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Hillcrest",
+          "note": "Dedicated 100% gluten-free and vegan bakery; free of the top 10 allergens.",
+          "rating": 4.9
+        },
+        {
+          "name": "Hamitbach",
+          "cuisine": "Israeli",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "Mission Valley",
+          "note": "Kosher Israeli street food; pita sandwiches and kebab plates.",
+          "rating": null
+        },
+        {
+          "name": "The Kebab Shop",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Downtown",
+          "note": "Local halal Mediterranean chain; doner kebab, lamb shawarma wraps, falafel.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "dallas",
+      "name": "Dallas, TX",
+      "aliases": [
+        "dallas",
+        "fort worth",
+        "fortworth",
+        "plano",
+        "irving",
+        "arlington",
+        "frisco",
+        "addison",
+        "richardson",
+        "garland"
+      ],
+      "restaurants": [
+        {
+          "name": "Spiral Diner & Bakery",
+          "cuisine": "Diner",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Bishop Arts",
+          "note": "Long-running all-vegan diner and bakery.",
+          "rating": null
+        },
+        {
+          "name": "El Palote Panaderia",
+          "cuisine": "Mexican",
+          "price": "$",
+          "diets": [
+            "vegan"
+          ],
+          "area": "Pleasant Grove",
+          "note": "Vegan Mexican; tacos and panaderia.",
+          "rating": null
+        },
+        {
+          "name": "Kalachandji's",
+          "cuisine": "Indian",
+          "price": "$",
+          "diets": [
+            "vegetarian",
+            "vegan"
+          ],
+          "area": "East Dallas",
+          "note": "Hare Krishna temple vegetarian restaurant.",
+          "rating": null
+        },
+        {
+          "name": "Sweet Gilly's Specialty Bakeshop",
+          "cuisine": "Bakery",
+          "price": "$$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Frisco",
+          "note": "Entirely gluten-free, dairy-free, egg-free bakeshop.",
+          "rating": null
+        },
+        {
+          "name": "Aderet Grill & Salad",
+          "cuisine": "Mediterranean",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "North Dallas",
+          "note": "Kosher Mediterranean; falafel and shawarma.",
+          "rating": null
+        },
+        {
+          "name": "Wava Halal Grill",
+          "cuisine": "Middle Eastern",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Greenville",
+          "note": "NY-style halal street food; shawarma, open late.",
+          "rating": null
+        }
+      ]
+    },
+    {
+      "id": "san-jose",
+      "name": "San Jose, CA",
+      "aliases": [
+        "san jose",
+        "silicon valley",
+        "santa clara",
+        "sunnyvale",
+        "mountain view",
+        "palo alto",
+        "cupertino",
+        "milpitas"
+      ],
+      "restaurants": [
+        {
+          "name": "Tofoo Com Chay",
+          "cuisine": "Vietnamese",
+          "price": "$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Downtown San Jose",
+          "note": "Cozy vegan Vietnamese; pho, banh mi, taro buns.",
+          "rating": 4.7
+        },
+        {
+          "name": "Vegetarian House",
+          "cuisine": "Asian",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian",
+            "gluten-free"
+          ],
+          "area": "Downtown San Jose",
+          "note": "30+ year vegan staple; global menu with GF and raw options.",
+          "rating": 4.7
+        },
+        {
+          "name": "Good Karma Artisan Ales & Cafe",
+          "cuisine": "Pub",
+          "price": "$$",
+          "diets": [
+            "vegan",
+            "vegetarian"
+          ],
+          "area": "Downtown San Jose",
+          "note": "All-vegan brewpub; craft beer, cashew-cheese pizzas.",
+          "rating": null
+        },
+        {
+          "name": "The Choclo",
+          "cuisine": "Colombian bakery",
+          "price": "$",
+          "diets": [
+            "gluten-free"
+          ],
+          "area": "Downtown San Jose",
+          "note": "All products naturally gluten-free; bunuelos, pandebono.",
+          "rating": 4.9
+        },
+        {
+          "name": "Pars Kosher Market",
+          "cuisine": "Market/Deli",
+          "price": "$$",
+          "diets": [
+            "kosher"
+          ],
+          "area": "South San Jose",
+          "note": "Certified kosher market with deli counter; shawarma, prepared foods.",
+          "rating": 4.9
+        },
+        {
+          "name": "Pepper Tales",
+          "cuisine": "Indian",
+          "price": "$$",
+          "diets": [
+            "halal"
+          ],
+          "area": "Downtown San Jose",
+          "note": "Halal-certified Indian; tikka masala, biryani, vegetarian specialties.",
+          "rating": null
+        }
+      ]
+    }
+  ]
+}
