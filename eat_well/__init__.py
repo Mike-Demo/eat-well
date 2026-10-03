@@ -13,6 +13,7 @@ from badgeware import *
 import json
 
 from icons import DIETS, draw_diet_icon, diet_by_key
+from qr_data import QR
 
 badge.mode(HIRES | VSYNC)
 display.backlight(0.85)
@@ -261,12 +262,52 @@ def draw_detail():
         y += 20
     y += 4
     screen.pen = DIM
-    for line in wrap(spot["note"], 44):
+    for line in wrap(spot["note"], 34):
         screen.text(line, 12, y)
         y += 13
+    draw_qr(CITIES[city_idx]["id"] + "|" + spot["name"])
     screen.pen = color.rgb(190, 150, 60)
     screen.text("Menus change. Verify dietary needs directly.", 12, H - FOOTER_H - 14)
-    footer("B back")
+    footer("B back   Scan QR for map")
+
+
+QR_SCALE = 2
+QR_QUIET = 2  # quiet-zone modules on each side
+_qr_cache = {}
+
+
+def qr_matrix(key):
+    """Decode a packed QR entry once and cache it. Returns (size, bytes)."""
+    hit = _qr_cache.get(key)
+    if hit is None:
+        size, hexdata = QR[key]
+        raw = bytearray(len(hexdata) // 2)
+        for i in range(0, len(hexdata), 2):
+            raw[i // 2] = int(hexdata[i:i + 2], 16)
+        hit = (size, raw)
+        _qr_cache[key] = hit
+    return hit
+
+
+def draw_qr(key):
+    """Draw the MapQuest QR code for a restaurant, bottom-right above footer."""
+    if key not in QR:
+        return
+    size, raw = qr_matrix(key)
+    total = (size + QR_QUIET * 2) * QR_SCALE
+    x0 = W - total - 8
+    y0 = H - FOOTER_H - total - 6
+    screen.pen = WHITE
+    screen.rectangle(x0, y0, total, total)
+    screen.pen = color.black
+    bit = 0
+    for row in range(size):
+        for col in range(size):
+            if (raw[bit // 8] >> (7 - bit % 8)) & 1:
+                screen.rectangle(x0 + (col + QR_QUIET) * QR_SCALE,
+                                 y0 + (row + QR_QUIET) * QR_SCALE,
+                                 QR_SCALE, QR_SCALE)
+            bit += 1
 
 
 def update():
