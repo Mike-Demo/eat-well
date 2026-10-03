@@ -5,22 +5,26 @@ Pick a city, filter by diet, browse the results, and open a detail view with
 cuisine, price, rating, neighborhood, and notes. Each detail screen also shows
 a QR code that opens the restaurant in MapQuest when scanned.
 
+A web companion with AI-powered natural-language search (Qwen3, running in the browser) is at https://eat-well-ai.view.fast/ — see the [Eat Well AI](https://github.com/Mike-Demo/eat-well-ai) repo.
+
 ## Cities
 
-12 US metros, 81 curated spots:
+14 US metros, 557 curated spots:
 
-- San Francisco, CA (10)
-- Twin Cities, MN (9)
-- Chicago, IL (8)
-- New York, NY (6)
-- Los Angeles, CA (6)
-- Houston, TX (6)
-- Phoenix, AZ (6)
-- Philadelphia, PA (6)
-- San Antonio, TX (6)
-- San Diego, CA (6)
-- Dallas, TX (6)
-- San Jose, CA (6)
+- San Francisco, CA (36)
+- Twin Cities, MN (39)
+- Chicago, IL (42)
+- New York, NY (39)
+- Los Angeles, CA (40)
+- Houston, TX (35)
+- Phoenix, AZ (39)
+- Philadelphia, PA (35)
+- San Antonio, TX (42)
+- San Diego, CA (39)
+- Dallas, TX (40)
+- San Jose, CA (36)
+- Washington, DC (42)
+- Miami, FL (53)
 
 ## Controls
 
