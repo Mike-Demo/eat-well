@@ -1,0 +1,210 @@
+{
+  "boltSlidesVersion": 1,
+  "boltSlidesId": "11011050-f9d6-4d43-8a9e-3e43af51bbaf",
+  "deck": {
+    "title": "Eat Well — find food that fits your life",
+    "transition": "fade",
+    "font": "manrope",
+    "accent": "#f97316"
+  },
+  "slides": [
+    {
+      "id": "s1",
+      "position": 0,
+      "layout": "cover",
+      "props": {
+        "kicker": "Restaurant discovery · Open source",
+        "title": "Eat Well.\nFind food that ==fits your life==.",
+        "subtitle": "A curated collection of restaurants with the details diners actually decide on.",
+        "image": "https://images.pexels.com/photos/6327536/pexels-photo-6327536.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "dim": 0.58,
+        "foot": "github.com/Mike-Demo/eat-well"
+      },
+      "background": {
+        "type": "image",
+        "url": "https://images.pexels.com/photos/6327536/pexels-photo-6327536.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "dim": 0.58
+      },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Warm open. Eat Well exists because eating out with dietary needs shouldn't be a research project. One sentence, then move on.",
+      "status": "none"
+    },
+    {
+      "id": "s2",
+      "position": 1,
+      "layout": "contrast",
+      "props": {
+        "kicker": "The problem",
+        "title": "Finding a place you can ==actually eat well== is harder than it should be.",
+        "left": {
+          "label": "Today",
+          "title": "Stitch it together yourself",
+          "points": [
+            "Search results, menus, and review sites — in separate tabs",
+            "Dietary needs buried in menus or old photos",
+            "The details that matter most are the hardest to verify"
+          ]
+        },
+        "right": {
+          "label": "With Eat Well",
+          "title": "One place to decide",
+          "points": [
+            "Every option in one browsable collection",
+            "The practical details up front",
+            "What you tap is where you meant to go"
+          ]
+        }
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Anchor on the user's pain: they're not short of restaurants, they're short of trustworthy details. Pause on 'hardest to verify'.",
+      "status": "none"
+    },
+    {
+      "id": "s3",
+      "position": 2,
+      "layout": "poster",
+      "props": {
+        "label": "What it does",
+        "title": "One focused collection — {c:#4ade80}built to decide with{/c}, not to scroll through.",
+        "body": "Eat Well gathers restaurants into a single browsable experience, with the details diners actually decide on — dietary fit, practical info, and a link straight through to the place itself.",
+        "label2": "",
+        "image": "https://images.pexels.com/photos/6740849/pexels-photo-6740849.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Keep this concrete: a focused discovery experience, not another infinite feed. The point is less scrolling, more deciding.",
+      "status": "none"
+    },
+    {
+      "id": "s4",
+      "position": 3,
+      "layout": "bigNumber",
+      "props": {
+        "kicker": "Built on verified data",
+        "value": "Hundreds",
+        "caption": "of restaurant links researched and verified one by one — not scraped blindly, so what you tap is where you meant to go.",
+        "foot": "Every link in the collection was checked by hand."
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "This is the trust slide. The data work is the moat: each link was visited and verified, which is why nothing dead-ends.",
+      "status": "none"
+    },
+    {
+      "id": "s5",
+      "position": 4,
+      "layout": "steps",
+      "props": {
+        "kicker": "How it works",
+        "title": "From browsing to eating in ==four steps==.",
+        "items": [
+          { "title": "Browse or search", "body": "Move through the collection or jump straight to what you're craving." },
+          { "title": "Open a place", "body": "One tap pulls up the full profile." },
+          { "title": "Check the details", "body": "Dietary fit and practical info, up front." },
+          { "title": "Go eat", "body": "Follow the verified link to the restaurant itself." }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Walk the flow quickly — it's deliberately simple. No account, no feed, no friction between deciding and going.",
+      "status": "none"
+    },
+    {
+      "id": "s6",
+      "position": 5,
+      "layout": "bento",
+      "props": {
+        "kicker": "Key features",
+        "title": "Everything a diner needs, ==nothing they don't==.",
+        "tiles": [
+          {
+            "k": "01",
+            "title": "Curated collection",
+            "body": "A focused, browsable set of restaurants — not an endless feed.",
+            "variant": "accent"
+          },
+          {
+            "k": "02",
+            "title": "Real search",
+            "body": "Find the right place fast, by what matters to you."
+          },
+          {
+            "k": "03",
+            "title": "Decision-ready details",
+            "body": "Dietary needs and practical info surfaced where you choose.",
+            "variant": "glow"
+          },
+          {
+            "k": "04",
+            "title": "Verified links",
+            "body": "Every tap lands on the restaurant you meant to reach."
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Hit the four pillars: curated, searchable, detail-rich, verified. Verified links are the differentiator — circle back to slide 4.",
+      "status": "none"
+    },
+    {
+      "id": "s7",
+      "position": 6,
+      "layout": "pillars",
+      "props": {
+        "title": "Working demo. ==Open source.==",
+        "items": [
+          {
+            "title": "It works today",
+            "body": "A live, usable demo — browse the collection end to end, no waitlist."
+          },
+          {
+            "title": "Free and open",
+            "body": "The full codebase is public on GitHub — read it, fork it, build on it."
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Status check: this is real and shipping, not a concept. Open source means the community can extend the collection too.",
+      "status": "none"
+    },
+    {
+      "id": "s8",
+      "position": 7,
+      "layout": "cover",
+      "props": {
+        "kicker": "Eat Well",
+        "title": "Eat well. ==Know before you go.==",
+        "subtitle": "Explore the collection or read the code — it's all open.\n{c:#4ade80}github.com/Mike-Demo/eat-well{/c}",
+        "image": "https://images.pexels.com/photos/17527769/pexels-photo-17527769.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "dim": 0.6,
+        "foot": "github.com/Mike-Demo/eat-well"
+      },
+      "background": {
+        "type": "image",
+        "url": "https://images.pexels.com/photos/17527769/pexels-photo-17527769.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "dim": 0.6
+      },
+      "animation": "cascade",
+      "transition": "zoom",
+      "nav": null,
+      "notes": "Close with the invitation: try the demo, star the repo. Leave the link on screen while taking questions.",
+      "status": "none"
+    }
+  ]
+}

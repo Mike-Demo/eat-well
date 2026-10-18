@@ -1,0 +1,58 @@
+/* ===================================================================
+   THEME TOKENS — "Eat Well": warm dark theme, orange accent.
+   =================================================================== */
+:root {
+  /* Surfaces — atmosphere / glow mix from --accent so a deck accent
+     override retints washes without rewriting these. */
+  --bg: #14100b;
+  --bg-grad-1: color-mix(in srgb, var(--accent) 10%, transparent);
+  --bg-grad-2: color-mix(in srgb, var(--accent) 6%, transparent);
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+
+  /* Ink — warm off-white, AA on the dark warm surface */
+  --fg: #f7f1e8;
+  --fg-muted: #b3a894;
+  --fg-faint: #7d7364;
+
+  /* Hairlines */
+  --hair: rgba(255, 255, 255, 0.12);
+  --hair-2: rgba(255, 255, 255, 0.07);
+
+  /* Accent — ONE accent, SOLID (no gradients). Warm orange, AA on dark. */
+  --primary: #f97316;
+  --accent: #f97316;
+  --accent-ink: #1a1206;
+
+  /* Fresh green — secondary highlight only (rich-text {c:}) */
+  --green: #4ade80;
+
+  /* Radius */
+  --radius: 22px;
+  --radius-sm: 12px;
+  --radius-lg: 26px;
+
+  /* Depth */
+  --shadow: 0 50px 120px -50px rgba(0, 0, 0, 0.9);
+  --glow: 0 30px 80px -40px color-mix(in srgb, var(--accent) 45%, transparent);
+
+  /* Type — friendly, strong (Manrope pairing) */
+  --font-head: 'Manrope', -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+    sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --dur: 0.4s;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Atmosphere */
+  --grain: 0.035;
+  --vignette: rgba(0, 0, 0, 0.24);
+
+  /* Responsive gutter — fluid side / vertical padding */
+  --gutter: clamp(28px, 6vw, 120px);
+  --gutter-y: clamp(40px, 8vh, 96px);
+}
