@@ -71,3 +71,50 @@ the same JSON shape: `id`, `name`, `aliases` (for Near-me matching), and a
 
 The app entry point is `eat_well/__init__.py`; `eat_well/icons.py` draws the
 diet icons.
+
+## Security audit triage — 2026-10-21
+
+Parent: [Mike-Demo/eat-well#1](https://github.com/Mike-Demo/eat-well/issues/1).
+This Markdown backlog is the fallback for a session without issue-creation
+capability; the issue below is ready to file, not already created.
+
+### Prioritized backlog
+
+- **Confirmed findings: 0.** There are no confirmed findings to rank by
+  severity, lower-trust reachability, or fix size/safety, no shared-root-cause
+  groups, and no confirmed-finding remediation issues to create.
+- **Needs validation: 1.** File the single checklist issue below. Its runtime
+  impact remains unknown; do not assign severity or promote it to a confirmed
+  finding before resolving the missing fact.
+- **Rejected candidates: 3.** Do not reopen without new evidence:
+  `make-qr-no-url-allowlist-phishing-qr`,
+  `make-qr-unescaped-data-codegen-injection`,
+  `unvalidated-restaurants-json-missing-key-crash`.
+
+The supplied audit was static source inspection only: no code was executed
+and no deployed endpoint was probed. This triage changes no app code and
+does not claim runtime validation.
+
+### Ready-to-file issue
+
+**Title:** `[security][needs-validation] Audit leads to validate`
+
+**Body:**
+
+Parent audit: [Mike-Demo/eat-well#1](https://github.com/Mike-Demo/eat-well/issues/1).
+
+- [ ] Validate **Near me: non-object JSON from ipwho.is raises uncaught
+  AttributeError instead of degrading to a notice**.
+  - Fingerprint: `locate-city-non-dict-json-uncaught-crash`.
+  - Evidence / claimed root cause:
+    [`locate_city()`](eat_well/__init__.py#L145-L157) calls
+    `data.get('success')` and `data.get('city')` outside the try/except
+    guarding `requests.get` and `resp.json()`, without checking that the
+    parsed JSON is a dict. A non-object body therefore raises an uncaught
+    `AttributeError`; the resulting session behavior is not established.
+  - Exact missing fact: What the Badgeware run() loop does on the physical Tufty 2350 (and in badge.select) when update() raises an uncaught exception - terminate the app session, show a recoverable error card and resume, or restart - since runtime.md documents error cards only for the browser profile and states physical firmware is not tested by the kit.
+  - Record the observed behavior separately for physical Tufty 2350 and
+    badge.select, with runtime/firmware versions and reproduction evidence.
+    Keep the lead open if either environment remains unvalidated. Only then
+    decide whether a confirmed security finding and remediation issue are
+    warranted; do not assign severity to this lead.
